@@ -26,6 +26,5 @@ api.add_resource(Users, '/users/<_id>')
 
 db.init_app(app)
 
-# if __name__ == '__main__':
-#   app.run(port=5000, debug=True)
-app.run(port=5000, debug=True)
+if __name__ == '__main__':
+  app.run(port=5000, debug=True)
