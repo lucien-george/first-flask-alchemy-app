@@ -8,7 +8,7 @@ from resources.restaurant import Restaurants, Restaurant
 from db import db
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABSE_URL', 'sqlite:///data.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'lucien'
 api = Api(app)
@@ -26,5 +26,6 @@ api.add_resource(Users, '/users/<_id>')
 
 db.init_app(app)
 
-if __name__ == '__main__':
-  app.run(port=5000, debug=True)
+# if __name__ == '__main__':
+#   app.run(port=5000, debug=True)
+app.run(port=5000, debug=True)
